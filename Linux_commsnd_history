@@ -4,3 +4,12 @@
   280  cat Домашние_животные.txt Вьючные_животные.txt > Друзья_человека.txt
   281  cat Друзья_человека.txt
   282  history
+
+
+  300  mv Друзья_человека.txt /test_work/
+  301  ls
+  302  mv Друзья_человека.txt test_work/
+  303  ls
+  304  ls /test_work
+  305  ls /test_work/
+  306  ls test_work/
