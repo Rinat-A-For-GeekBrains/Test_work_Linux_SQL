@@ -4,9 +4,7 @@ import java.time.LocalDate;
 
 public abstract class Animal {
 
-    private String name;
-    private LocalDate dateOfBirth;
-
-    private
+    protected String name;
+    protected LocalDate dateOfBirth;
 
 }

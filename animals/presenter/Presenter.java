@@ -1,5 +1,7 @@
 package animals.presenter;
 
+import animals.model.service.Service;
+
 public class Presenter {
     View consoleUI;
     Service service = new Service();
