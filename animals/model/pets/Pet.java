@@ -13,6 +13,7 @@ protected ArrayList <String> commandList = new ArrayList<>(){{add ("Сидеть
     public Pet (String name, LocalDate dateOfBirth)
     {
         this.name = name;
+
         this.dateOfBirth = dateOfBirth;
     }
 
