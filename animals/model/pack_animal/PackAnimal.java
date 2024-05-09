@@ -4,7 +4,7 @@ import animals.model.Animal;
 
 import java.time.LocalDate;
 
-public abstract class PackAnimal extends Animal {
+public class PackAnimal extends Animal {
 
     protected double cargo;
 

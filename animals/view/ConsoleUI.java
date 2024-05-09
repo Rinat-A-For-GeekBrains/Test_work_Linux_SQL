@@ -1,10 +1,13 @@
 package animals.view;
 
+import animals.presenter.Presenter;
+
 import java.util.Scanner;
 
 public class ConsoleUI implements View{
 
     private final Scanner scanner;
+    Presenter presenter = new Presenter(this);
 
     public ConsoleUI() {
         scanner = new Scanner(System.in);
@@ -24,13 +27,13 @@ public class ConsoleUI implements View{
     public void start() {
         boolean x = true;
         while (x) {
-            print("Введите: \n 1. Добавить животное \n 2. Определить животное в класс \n 3. Вывести список команд \n " +
+            print("Введите: \n 1. Добавить животное \n 2. Вывести список команд  \n 3. Добавить команду \n " +
                     "4. Добавить команду \n 5. Выход \n ");
             int c = Integer.parseInt(read());
             switch (c) {
                 case 1: {
                     print("Введите через пробел ID животного, имя животного");
-                    presenter.addAnimal(.parseInt(read()), read());
+                    presenter.addPet(parse(), read());
                     break;
                 }
                 case 2: {
