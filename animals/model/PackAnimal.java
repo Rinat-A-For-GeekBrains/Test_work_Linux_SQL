@@ -1,14 +1,15 @@
-package animals.model.pack_animal;
+package animals.model;
 
 import animals.model.Animal;
 
 import java.time.LocalDate;
 
 public class PackAnimal extends Animal {
-
+    PackAnimalType type;
     protected double cargo;
 
-    public PackAnimal(String name, double cargo, LocalDate dateOfBirth) {
+    public PackAnimal(PackAnimalType type, String name, double cargo, LocalDate dateOfBirth) {
+        this.type = type;
         this.name = name;
         this.cargo = cargo;
         this.dateOfBirth = dateOfBirth;

@@ -1,6 +1,10 @@
 package animals.presenter;
 
+import animals.model.PackAnimalType;
+import animals.model.Pet;
+import animals.model.PetAnimalType;
 import animals.model.service.Service;
+import animals.view.ConsoleUI;
 import animals.view.View;
 
 import java.time.LocalDate;
@@ -14,24 +18,16 @@ public class Presenter {
         consoleUI = ui;
     }
 
-    public void addPet( String name, LocalDate dateOfBirth)
+    public void addPet(PetAnimalType type, String name, LocalDate dateOfBirth)
     {
-        service.addPet(name, dateOfBirth);
+        service.addPet( type, name, dateOfBirth);
     }
-    public void addDog( String name, LocalDate dateOfBirth)
+
+    public void addPackAnimal(PackAnimalType type, String name, double cargo, LocalDate dateOfBirth)
     {
-        service.addDog(name, dateOfBirth);
+        service.addPackAnimal(type, name, cargo, dateOfBirth);
     }
-    public void addHamster( String name, LocalDate dateOfBirth)
-    {
-        service.addHamster(name, dateOfBirth);
-    }
-    public void addCamel( String name, double cargo, LocalDate dateOfBirth)
-    {
-        service.addCamel(name, cargo, dateOfBirth);
-    }
-    public void addHorse( String name, double cargo, LocalDate dateOfBirth)
-    {
-        service.addHorse(name, cargo, dateOfBirth);
-    }
+
+
+    Pet.get
 }
