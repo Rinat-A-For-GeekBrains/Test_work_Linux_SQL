@@ -16,10 +16,10 @@ protected static ArrayList <String> commandList = new ArrayList<>(){{add ("Си�
         this.type = type;
 
     }
-public ArrayList<String> getListCommand(){
+public static ArrayList<String> getListCommand(){
         return commandList;
 }
-public static void printCommandList(){
-        commandList.forEach(out::println);
+public static void addCommand(String command){
+        commandList.add(command);
 }
 }

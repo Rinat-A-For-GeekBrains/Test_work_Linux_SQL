@@ -5,9 +5,12 @@ import animals.model.Pet;
 import animals.model.PetAnimalType;
 import animals.presenter.Presenter;
 
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI implements View {
@@ -38,8 +41,7 @@ public class ConsoleUI implements View {
                      1. Добавить животное\s
                      2. Вывести список команд \s
                      3. Добавить команду\s
-                     4. Добавить команду\s
-                     5. Выход\s
+                     4. Выход\s
                     \s""");
             int c = Integer.parseInt(read());
             switch (c) {
@@ -59,33 +61,65 @@ public class ConsoleUI implements View {
                         int a = Integer.parseInt(read());
                         switch (a) {
                             case 1: {
-                                print("Введите через пробел имя животного, его день рождения");
-                                presenter.addPet(PetAnimalType.CAT, read(), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPet(PetAnimalType.CAT, name, date);
+//                                presenter.addPet(PetAnimalType.CAT, read(), LocalDate.parse(read()));
                                 break;
                             }
                             case 2: {
-                                print("Введите через пробел имя животного, его день рождения");
-                                presenter.addPet(PetAnimalType.DOG, read(), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPet(PetAnimalType.DOG, name, date);
+
                                 break;
                             }
                             case 3: {
-                                print("Введите через пробел имя животного, его день рождения");
-                                presenter.addPet(PetAnimalType.HAMSTER, read(), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPet(PetAnimalType.HAMSTER, name, date);
+
                                 break;
                             }
                             case 4: {
-                                print("Введите через пробел имя животного, грузоподъемность, его день рождения");
-                                presenter.addPackAnimal(PackAnimalType.HORSE, read(), Double.parseDouble(read()), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите грузоподъемность животного в кг");
+                                double cargo = Double.parseDouble(read());
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPackAnimal(PackAnimalType.HORSE, name, cargo, date);
+
+//                                print("Введите через пробел имя животного, грузоподъемность, его день рождения");
+//                                presenter.addPackAnimal(PackAnimalType.HORSE, read(), Double.parseDouble(read()), LocalDate.parse(read()));
                                 break;
                             }
                             case 5: {
-                                print("Введите через пробел имя животного, грузоподъемность, его день рождения");
-                                presenter.addPackAnimal(PackAnimalType.CAMEL,read(), Double.parseDouble(read()), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите грузоподъемность животного в кг");
+                                double cargo = Double.parseDouble(read());
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPackAnimal(PackAnimalType.CAMEL, name, cargo, date);
+
                                 break;
                             }
                             case 6: {
-                                print("Введите через пробел имя животного, грузоподъемность, его день рождения");
-                                presenter.addPackAnimal(PackAnimalType.DONKEY,read(), Double.parseDouble(read()), LocalDate.parse(read()));
+                                print("Введите имя животного");
+                                String name = read();
+                                print("Введите грузоподъемность животного в кг");
+                                double cargo = Double.parseDouble(read());
+                                print("Введите его день рождения в формате ГГГГ-ММ-ДД");
+                                LocalDate date = LocalDate.parse(read());
+                                presenter.addPackAnimal(PackAnimalType.DONKEY, name, cargo, date);
+
                                 break;
                             }
                             case 7: {
@@ -99,18 +133,32 @@ public class ConsoleUI implements View {
 
                 }
 
-            case 2: {
-                presenter.printCommandList;
+                case 2: {
+                    List<String> commandList = presenter.getListCommand();
 
-                Pet.printCommmandList;
+                    for (String s : commandList) {
+                        System.out.println(s);
+                    }
+                }
+
+
                 break;
-            }
-            case 3: {
-                x = false;
-                break;
+
+                case 3: {
+                    print("Введите новую команду для домашних животных");
+                    String command = read();
+                    presenter.addCommand(command);
+                    break;
+                }
+
+                case 4: {
+                    x = false;
+                    break;
+                }
+
             }
 
         }
-
     }
 }
+

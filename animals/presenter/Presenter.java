@@ -8,6 +8,7 @@ import animals.view.ConsoleUI;
 import animals.view.View;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Presenter {
     View consoleUI;
@@ -29,5 +30,13 @@ public class Presenter {
     }
 
 
-    Pet.get
+    public ArrayList<String> getListCommand(){
+        return service.getCommandList();
+    }
+
+    public void addCommand(String command)
+    {
+        service.addCommand(command);
+    }
+
 }
