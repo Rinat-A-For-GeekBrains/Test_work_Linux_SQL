@@ -1,0 +1,57 @@
+277  cat > Домашние животные.txt
+  278  cat > Домашние_животные.txt
+  279  cat > Вьючные_животные.txt
+  280  cat Домашние_животные.txt Вьючные_животные.txt > Друзья_человека.txt
+  281  cat Друзья_человека.txt
+  282  history
+
+
+  300  mv Друзья_человека.txt /test_work/
+  301  ls
+  302  mv Друзья_человека.txt test_work/
+  303  ls
+  304  ls /test_work
+  305  ls /test_work/
+  306  ls test_work/
+307  history
+  308  wget https://dev.mysql.com/downloads/file/?id=524196
+  309  wget https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb
+  310  dpkg -i mysql-apt-config_0.8.29-1_all.deb
+
+Выбор ранее не выбранного пакета mysql-apt-config.
+dpkg: из-за mysql-apt-config_0.8.29-1_all.deb, содержащегося в mysql-apt-config, возникла проблема предварительных зависимостей:
+ mysql-apt-config требует предварительной установки lsb-release
+  пакет lsb-release не установлен.
+
+dpkg: ошибка при обработке архива mysql-apt-config_0.8.29-1_all.deb (--install):
+ проблема предварительных зависимостей — пакет mysql-apt-config не будет установлен
+При обработке следующих пакетов произошли ошибки:
+ mysql-apt-config_0.8.29-1_all.deb
+
+
+  311  apt install lsb-release
+  312  dpkg -i mysql-apt-config_0.8.29-1_all.deb
+  313  cat /etc/apt/sources.list
+  314  apt update
+  315  apt install mysql
+  316  apt install mysql-community-server
+  317  wget http://ftp.de.debian.org/debian/pool/main/v/vim/vim_9.0.1378-2_arm64.deb
+  318  dpkg -i vim_9.0.1378-2_arm64.deb
+  319  wget http://ftp.de.debian.org/debian/pool/main/v/vim/vim_9.0.1378-2_amd64.deb
+  320  dpkg -i vim_9.0.1378-2_amd64.deb
+  321  wget https://downloads.plex.tv/plex-media-server-new/1.40.2.8395-c67dce28e/debian/plexmediaserver_1.40.2.8395-c67dce28e_amd64.deb
+  322  dpkg -i plexmediaserver_1.40.2.8395-c67dce28e_amd64.deb
+  323  wget http://ftp.de.debian.org/debian/pool/main/7/7zip/7zip_22.01+dfsg-8_amd64.deb
+  324  dpkg -i 7zip_22.01+dfsg-8_amd64.deb
+
+Выбор ранее не выбранного пакета 7zip.
+(Чтение базы данных … на данный момент установлено 41758 файлов и каталогов.)
+Подготовка к распаковке 7zip_22.01+dfsg-8_amd64.deb …
+Распаковывается 7zip (22.01+dfsg-8) …
+Настраивается пакет 7zip (22.01+dfsg-8) …
+
+  325  dpkg -r 7zip
+(Чтение базы данных … на данный момент установлено 41769 файлов и каталогов.)
+Удаляется 7zip (22.01+dfsg-8) …
+
+  326  history
