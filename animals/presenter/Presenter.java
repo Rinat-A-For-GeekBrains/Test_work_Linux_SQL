@@ -1,18 +1,42 @@
 package animals.presenter;
 
+import animals.model.PackAnimalType;
+import animals.model.Pet;
+import animals.model.PetAnimalType;
 import animals.model.service.Service;
+import animals.view.ConsoleUI;
+import animals.view.View;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Presenter {
     View consoleUI;
     Service service = new Service();
 
-    public Presenter(View ui) {
+    public Presenter(View ui)
+    {
         consoleUI = ui;
     }
 
-    public void addAnimal( String name) {
-        service.addAnimal(name);
+    public void addPet(PetAnimalType type, String name, LocalDate dateOfBirth)
+    {
+        service.addPet( type, name, dateOfBirth);
     }
 
+    public void addPackAnimal(PackAnimalType type, String name, double cargo, LocalDate dateOfBirth)
+    {
+        service.addPackAnimal(type, name, cargo, dateOfBirth);
+    }
+
+
+    public ArrayList<String> getListCommand(){
+        return service.getCommandList();
+    }
+
+    public void addCommand(String command)
+    {
+        service.addCommand(command);
+    }
 
 }

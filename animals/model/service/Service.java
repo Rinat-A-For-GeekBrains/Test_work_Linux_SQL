@@ -1,18 +1,39 @@
 package animals.model.service;
 
-import animals.model.Animal;
-import animals.model.pets.Cat;
+import animals.model.*;
 
 import java.time.LocalDate;
-import java.time.Month;
+import java.util.ArrayList;
 
 public class Service {
+Counter counter = new Counter();
+    public void addPet(PetAnimalType type, String name, LocalDate dateOfBirth) {
+        Animal pet = new Pet(type, name, dateOfBirth);
 
-
-    public void addCat(int animal_id, String name) {
-        Animal cat = new Cat("Vasya", LocalDate.parse("24.12.2020"));
-
+        try  {
+            counter.addAnimal();
+        } catch (Exception e) {
+            System.out.println("Неправильный ввод данных");
+        }
     }
+
+    public void addPackAnimal(PackAnimalType type, String name, double cargo, LocalDate dateOfBirth) {
+        Animal packAnimal = new PackAnimal(type, name, cargo, dateOfBirth);
+        try {
+            counter.addAnimal();
+        } catch (Exception e) {
+            System.out.println("Неправильный ввод данных");
+        }
+    }
+
+    public ArrayList<String> getCommandList() {
+        return Pet.getListCommand();
+    }
+    public void addCommand (String command)
+    {
+    Pet.addCommand(command);
+    }
+
 }
 
 
